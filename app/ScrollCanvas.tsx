@@ -816,6 +816,430 @@ export default function ScrollCanvas() {
           </div>
         </div>
       )}
+
+      {/* SECCIÓN TEAM */}
+      <section
+        style={{
+          backgroundColor: "#000000",
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "80px",
+          gap: "48px",
+          position: "relative",
+          zIndex: 30,
+          fontFamily: "var(--font-geist-sans)",
+        }}
+      >
+        {/* Label */}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "12px",
+            border: "1px solid rgba(0,255,255,0.3)",
+            borderRadius: "999px",
+            padding: "10px 20px",
+          }}
+        >
+          <div
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              backgroundColor: "#00FFFF",
+            }}
+          />
+          <span
+            style={{
+              color: "#00FFFF",
+              fontSize: "16px",
+              fontWeight: 600,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+            }}
+          >
+            The Team
+          </span>
+        </div>
+
+        {/* Foto completa */}
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "1400px",
+            height: "400px",
+            borderRadius: "16px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/team.jpeg"
+            alt="The FixedGap team"
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+
+        {/* Fila inferior */}
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "1400px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: "24px",
+          }}
+        >
+          {/* Tres líneas */}
+          <div style={{ display: "flex", gap: "48px", alignItems: "center" }}>
+            <p
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
+                fontWeight: 700,
+                margin: 0,
+              }}
+            >
+              <span style={{ color: "#00FFFF" }}>Software</span>{" "}
+              <span style={{ color: "#FFFFFF" }}>engineering</span>
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
+                fontWeight: 700,
+                margin: 0,
+              }}
+            >
+              <span style={{ color: "#00FFFF" }}>Biomedical</span>{" "}
+              <span style={{ color: "#FFFFFF" }}>engineering</span>
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
+                fontWeight: 700,
+                margin: 0,
+              }}
+            >
+              <span style={{ color: "#FFFFFF" }}>Active</span>{" "}
+              <span style={{ color: "#00FFFF" }}>physician</span>
+            </p>
+          </div>
+
+          {/* Badges */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "20px",
+              flexShrink: 0,
+            }}
+          >
+            <img
+              src="/spain.png"
+              alt="Spain"
+              style={{
+                height: "36px",
+                width: "auto",
+                objectFit: "contain",
+              }}
+            />
+            <img
+              src="/usa.png"
+              alt="USA"
+              style={{
+                height: "36px",
+                width: "auto",
+                objectFit: "contain",
+              }}
+            />
+            <img
+              src="/HSIL.png"
+              alt="Harvard HSIL"
+              style={{
+                height: "36px",
+                width: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN ASK */}
+      <section
+        style={{
+          backgroundColor: "#000000",
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "80px",
+          gap: "48px",
+          position: "relative",
+          zIndex: 30,
+          fontFamily: "var(--font-geist-sans)",
+        }}
+      >
+        {/* Label */}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            border: "1px solid rgba(0,255,255,0.3)",
+            borderRadius: "999px",
+            padding: "6px 14px",
+            alignSelf: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "6px",
+              height: "6px",
+              borderRadius: "50%",
+              backgroundColor: "#00FFFF",
+            }}
+          />
+          <span
+            style={{
+              color: "#00FFFF",
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+            }}
+          >
+            The Ask
+          </span>
+        </div>
+
+        {/* Número grande */}
+        <h2
+          style={{
+            color: "#00FFFF",
+            fontSize: "clamp(4rem, 10vw, 8rem)",
+            fontWeight: 800,
+            lineHeight: 1,
+            letterSpacing: "-0.03em",
+            margin: 0,
+            textAlign: "center",
+          }}
+        >
+          $500,000
+        </h2>
+
+        {/* Subtexto */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            alignItems: "center",
+          }}
+        >
+          <p
+            style={{
+              color: "#00FFFF",
+              fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
+              fontWeight: 600,
+              margin: 0,
+              textAlign: "center",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Pre-seed.
+          </p>
+          <p
+            style={{
+              color: "rgba(255,255,255,0.4)",
+              fontSize: "clamp(1rem, 2vw, 1.4rem)",
+              fontWeight: 400,
+              margin: 0,
+              textAlign: "center",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            SAFE or convertible note.
+          </p>
+        </div>
+
+        {/* Tres cards */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "16px",
+            width: "100%",
+            maxWidth: "1100px",
+          }}
+        >
+          {[
+            {
+              number: "01",
+              title: "Validate with real patients",
+            },
+            {
+              number: "02",
+              title: "First clinical partnerships",
+            },
+            {
+              number: "03",
+              title: "Regulatory approval",
+            },
+          ].map((item) => (
+            <div
+              key={item.number}
+              style={{
+                backgroundColor: "#0A0A0A",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "20px",
+                padding: "48px 40px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "24px",
+                minHeight: "200px",
+              }}
+            >
+              <span
+                style={{
+                  color: "#00FFFF",
+                  fontSize: "18px",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textAlign: "center",
+                }}
+              >
+                {item.number}
+              </span>
+              <h3
+                style={{
+                  color: "#FFFFFF",
+                  fontSize: "clamp(1.3rem, 2vw, 1.6rem)",
+                  fontWeight: 700,
+                  margin: 0,
+                  lineHeight: 1.3,
+                  textAlign: "center",
+                }}
+              >
+                {item.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECCIÓN CIERRE */}
+      <section
+        style={{
+          backgroundColor: "#000000",
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "80px",
+          gap: "48px",
+          position: "relative",
+          zIndex: 30,
+          fontFamily: "var(--font-geist-sans)",
+        }}
+      >
+        {/* Logo */}
+        <img
+          src="/logo.png"
+          alt="FixedGap"
+          style={{
+            height: "clamp(180px, 25vw, 300px)",
+            width: "auto",
+            objectFit: "contain",
+          }}
+        />
+
+        {/* Nombre */}
+        <h2
+          style={{
+            color: "#FFFFFF",
+            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+            fontWeight: 800,
+            margin: 0,
+            letterSpacing: "-0.03em",
+          }}
+        >
+          FixedGap
+        </h2>
+
+        {/* Frase principal */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
+            textAlign: "center",
+          }}
+        >
+          <p
+            style={{
+              color: "#FFFFFF",
+              fontSize: "clamp(1.5rem, 3.5vw, 2.8rem)",
+              fontWeight: 700,
+              margin: 0,
+              lineHeight: 1.2,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Recovery happens every day.
+          </p>
+          <p
+            style={{
+              color: "#00FFFF",
+              fontSize: "clamp(1.5rem, 3.5vw, 2.8rem)",
+              fontWeight: 700,
+              margin: 0,
+              lineHeight: 1.2,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Clinical insight should too.
+          </p>
+        </div>
+
+        {/* Botón Watch Demo */}
+        <button
+          style={{
+            backgroundColor: "#FFFFFF",
+            color: "#000000",
+            fontSize: "18px",
+            fontWeight: 700,
+            padding: "16px 48px",
+            borderRadius: "12px",
+            border: "none",
+            cursor: "pointer",
+            transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0 8px 24px rgba(255,255,255,0.2)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+        >
+          Watch demo
+        </button>
+      </section>
     </>
   );
 }
