@@ -120,6 +120,8 @@ export default function ScrollCanvas() {
   const scrollLockedRef = useRef(false);
   const lastLockedFrameRef = useRef<number>(-1);
   const lockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const problemContentRef = useRef<HTMLDivElement | null>(null);
+  const problem2ContentRef = useRef<HTMLDivElement | null>(null);
 
   const [loaded, setLoaded] = useState(false);
   const [loadedCount, setLoadedCount] = useState(0);
@@ -401,6 +403,16 @@ export default function ScrollCanvas() {
           const frameDist = Math.abs(frameIdx - snapFrame);
           const opacity = frameDist <= 20 ? Math.max(0, 1 - frameDist / 20) : 0;
           el.style.opacity = String(opacity);
+
+          // Update PROBLEM section content (frame 1)
+          if (snapFrame === 1 && problemContentRef.current) {
+            problemContentRef.current.style.opacity = String(opacity);
+          }
+
+          // Update PROBLEM 2 section content (frame 95)
+          if (snapFrame === 95 && problem2ContentRef.current) {
+            problem2ContentRef.current.style.opacity = String(opacity);
+          }
         }
       });
 
@@ -528,6 +540,282 @@ export default function ScrollCanvas() {
           </div>
         );
       })}
+
+      {/* PROBLEM section content - Frame 1 */}
+      {loaded && (
+        <div
+          ref={problemContentRef}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "0 0 0 80px",
+            opacity: 0,
+            pointerEvents: "none",
+            zIndex: 10,
+            fontFamily: "var(--font-geist-sans)",
+          }}
+        >
+            {/* Badge "2 seconds = 1 stroke" */}
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                border: "3px solid rgba(255,255,255,0.4)",
+                borderRadius: "999px",
+                padding: "18px 40px",
+                width: "fit-content",
+                marginBottom: "80px",
+              }}
+            >
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.95)",
+                  fontSize: "36px",
+                  fontWeight: 700,
+                  letterSpacing: "0.01em",
+                }}
+              >
+                2 seconds = 1 stroke
+              </span>
+            </div>
+
+            {/* Dos números grandes */}
+            <div
+              style={{
+                display: "flex",
+                gap: "160px",
+                alignItems: "flex-start",
+              }}
+            >
+              {/* 12.2M */}
+              <div>
+                <p
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: "clamp(8rem, 15vw, 14rem)",
+                    fontWeight: 900,
+                    lineHeight: 0.95,
+                    letterSpacing: "-0.04em",
+                    margin: 0,
+                  }}
+                >
+                  12.2M
+                </p>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.7)",
+                    fontSize: "42px",
+                    fontWeight: 600,
+                    marginTop: "32px",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  strokes every <span style={{ color: "#22D3EE", fontWeight: 700 }}>year</span>
+                </p>
+              </div>
+
+              {/* 100M+ */}
+              <div>
+                <p
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: "clamp(8rem, 15vw, 14rem)",
+                    fontWeight: 900,
+                    lineHeight: 0.95,
+                    letterSpacing: "-0.04em",
+                    margin: 0,
+                  }}
+                >
+                  100M+
+                </p>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.7)",
+                    fontSize: "42px",
+                    fontWeight: 600,
+                    marginTop: "32px",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  living with stroke <span style={{ color: "#22D3EE", fontWeight: 700 }}>consequences</span>
+                </p>
+              </div>
+            </div>
+        </div>
+      )}
+
+      {/* PROBLEM 2 section content - Frame 95 */}
+      {loaded && (
+        <div
+          ref={problem2ContentRef}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            paddingTop: "150px",
+            paddingLeft: "80px",
+            paddingRight: "80px",
+            opacity: 0,
+            pointerEvents: "none",
+            zIndex: 10,
+            fontFamily: "var(--font-geist-sans)",
+            background: "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%)",
+          }}
+        >
+          {/* Título principal grande */}
+          <h2
+            style={{
+              color: "#FFFFFF",
+              fontSize: "56px",
+              fontWeight: 700,
+              margin: 0,
+              marginBottom: "80px",
+              lineHeight: 1.2,
+              maxWidth: "1000px",
+              textAlign: "center",
+              textShadow: "0 2px 8px rgba(0, 0, 0, 0.4)",
+            }}
+          >
+            After discharge, recovery becomes hard to monitor
+          </h2>
+
+          {/* Flujo en una sola línea horizontal — MUCHO MÁS GRANDE */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "60px",
+            }}
+          >
+            {/* Clinic visit */}
+            <div
+              style={{
+                border: "3px solid rgba(255,255,255,0.5)",
+                borderRadius: "20px",
+                padding: "48px 80px",
+                backgroundColor: "rgba(255,255,255,0.14)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4)",
+              }}
+            >
+              <p style={{ color: "#FFFFFF", fontSize: "40px", fontWeight: 700, margin: 0, textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)" }}>
+                Clinic visit
+              </p>
+            </div>
+
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "56px", margin: 0 }}>→</p>
+
+            {/* Home recovery */}
+            <div
+              style={{
+                border: "3px solid rgba(255,255,255,0.5)",
+                borderRadius: "20px",
+                padding: "52px 92px",
+                backgroundColor: "rgba(255,255,255,0.14)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "12px",
+              }}
+            >
+              <p style={{ color: "#FFFFFF", fontSize: "40px", fontWeight: 700, margin: 0, textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)" }}>
+                Home recovery
+              </p>
+              <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "22px", margin: 0, textShadow: "0 1px 3px rgba(0, 0, 0, 0.3)" }}>
+                weeks or months
+              </p>
+            </div>
+
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "56px", margin: 0 }}>→</p>
+
+            {/* Clinic visit */}
+            <div
+              style={{
+                border: "3px solid rgba(255,255,255,0.5)",
+                borderRadius: "20px",
+                padding: "48px 80px",
+                backgroundColor: "rgba(255,255,255,0.14)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4)",
+              }}
+            >
+              <p style={{ color: "#FFFFFF", fontSize: "40px", fontWeight: 700, margin: 0, textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)" }}>
+                Clinic visit
+              </p>
+            </div>
+          </div>
+
+          {/* Tres flashcards en fila horizontal — más pequeñas en comparación */}
+          <div
+            style={{
+              display: "flex",
+              gap: "28px",
+              marginTop: "240px",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
+            <div
+              style={{
+                border: "3px solid rgba(34,197,94,0.6)",
+                borderRadius: "18px",
+                padding: "48px 80px",
+                backgroundColor: "rgba(34,197,94,0.18)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 0 24px rgba(34,197,94,0.2)",
+              }}
+            >
+              <p style={{ color: "#FFFFFF", fontSize: "36px", fontWeight: 700, margin: 0, textShadow: "0 2px 6px rgba(0, 0, 0, 0.3)" }}>
+                Improving
+              </p>
+            </div>
+
+            <div
+              style={{
+                border: "3px solid rgba(234,179,8,0.6)",
+                borderRadius: "18px",
+                padding: "48px 80px",
+                backgroundColor: "rgba(234,179,8,0.18)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 0 24px rgba(234,179,8,0.2)",
+              }}
+            >
+              <p style={{ color: "#FFFFFF", fontSize: "36px", fontWeight: 700, margin: 0, textShadow: "0 2px 6px rgba(0, 0, 0, 0.3)" }}>
+                Stagnating
+              </p>
+            </div>
+
+            <div
+              style={{
+                border: "3px solid rgba(239,68,68,0.6)",
+                borderRadius: "18px",
+                padding: "48px 80px",
+                backgroundColor: "rgba(239,68,68,0.18)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 0 24px rgba(239,68,68,0.2)",
+              }}
+            >
+              <p style={{ color: "#FFFFFF", fontSize: "36px", fontWeight: 700, margin: 0, textShadow: "0 2px 6px rgba(0, 0, 0, 0.3)" }}>
+                Deteriorating
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
