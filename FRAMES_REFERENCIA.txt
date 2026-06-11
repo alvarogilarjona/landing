@@ -1,0 +1,29 @@
+FRAMES DE REFERENCIA - SCROLL VIDEO
+====================================
+
+FRAMES DE BLOQUEO/SNAP (con textos):
+- Frame 1: "PROBLEM"
+- Frame 95: "PROBLEM 2"
+- Frame 225: "WHAT IF THERE WAS A SOLUTION FOR THIS GAP"
+- Frame 350: "OUR SOLUTION"
+- Frame 483: "CLINICAL VIEW"
+- Frame 616: "BUSINESS PLAN"
+- Frame 720: "TRACTION"
+
+CAMBIOS VISUALES:
+- Frame 0-200: Imagen full screen + degradado negro inferior (oculta marca de agua KlingAI)
+- Frame 201-313: Imagen full screen (object-fit: cover), fondo oscuro
+- Frame 314-551: Imagen reducida al 70%, centrada, fondo BLANCO, difuminado normal
+- Frame 552-759: Imagen reducida al 70%, difuminado EXTRA amplio (350px) para igualar blancos
+
+IMPORTANTE:
+- Textos en BLANCO cuando fondo es oscuro (frames 0-313)
+- Textos en NEGRO cuando fondo es blanco (frames 314+)
+
+IMÁGENES HQ:
+- Cada frame de referencia usa imagen PNG de alta calidad
+- Rango HQ: ±15 frames (31 frames totales por punto de referencia)
+- Ejemplo Frame 95: frames 80-110 usan imagen HQ #2
+- Imágenes en: /public/frames-hq/1.png ... 8.png
+
+Total de frames: 759 (del 760 al 855 eliminados)
